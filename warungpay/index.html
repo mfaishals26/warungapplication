@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pembayaran Berhasil ✅</title>
+    <style>
+      body {
+        background: #f5f5f5;
+        color: #222;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      h1 { color: #1b5e20; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Pembayaran Berhasil ✅</h1>
+      <p>Terima kasih telah memesan di <b>WarungKU</b></p>
+      <p id="info"></p>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const order = params.get("order");
+      const amount = params.get("amount");
+      document.getElementById("info").innerText = `Order #${order} | Total: Rp${amount}`;
+    </script>
+  </body>
+</html>
