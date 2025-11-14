@@ -1,124 +1,64 @@
-☕ WarungKU — Aplikasi Kasir & Pemesanan Berbasis Mobile (React Native + QRIS Dummy)
+# WarungKU — Aplikasi Kasir & Pemesanan Warung Berbasis Mobile
 
-WarungKU adalah aplikasi kasir modern untuk warung, kedai kopi, atau usaha kuliner kecil yang membutuhkan sistem pemesanan cepat, pencatatan pesanan, dan proses pembayaran menggunakan QR Code (QRIS Dummy).
-Aplikasi ini dibuat dengan React Native, React Navigation, dan MockAPI sebagai backend menu.
-
-🚀 Fitur Utama
-✔️ 1. Dashboard Warung
-
-Tampilan awal berisi akses cepat ke:
-
-Pesan Baru
-
-Daftar Pesanan
-
-Laporan / Riwayat Pesanan
-
-✔️ 2. Pemesanan Menu
-
-Mengambil data menu dari MockAPI (otomatis update tanpa rebuild).
-
-Fitur pencarian menu.
-
-Kategori Makanan & Minuman.
-
-Setiap item memiliki:
-
-Nama
-
-Harga
-
-Gambar
-
-Deskripsi
-
-✔️ 3. Keranjang Pesanan
-
-Tambah item ke keranjang.
-
-Hitung total otomatis.
-
-Sebelum checkout, pembeli diminta mengisi:
-
-Nama pembeli (wajib)
-
-Nomor kursi/meja (opsional)
-
-✔️ 4. Pembayaran via QR Code (QRIS Dummy)
-
-Setelah konfirmasi pesanan, aplikasi akan menghasilkan QR Code pembayaran.
-
-QR berisi link ke halaman pembayaran:
-
-https://warungtestipay.vercel.app/?order=xxx&name=xxx&amount=xxxx
+WarungKU adalah aplikasi kasir sederhana untuk warung, kedai kopi, atau usaha kuliner kecil.
+Aplikasi ini mempermudah proses pemesanan, pencatatan pesanan, dan pembayaran menggunakan QR Code (QRIS Dummy).
+Dibangun menggunakan React Native, MockAPI, dan Expo.
 
 
-Halaman web menampilkan:
+# 🚀 Fitur Utama
+✔️ Dashboard Warung
 
-Nama pembeli
+ Menampilkan navigasi cepat ke:
 
-Jumlah yang harus dibayar
+- Pesan Baru
+- Daftar Pesanan
+- Laporan / Riwayat
 
-Status “Pembayaran Berhasil” (Dummy)
+✔️ Pemesanan Menu
 
-✔️ 5. Laporan / Riwayat Pemesanan
+- Menu diambil dari MockAPI (real-time update).
+- Tersedia kategori Makanan & Minuman.
+- Pencarian menu.
+Menampilkan:
+- Nama
+- Gambar
+- Harga
+  
+✔️ Keranjang Pesanan
 
-Menampilkan daftar pesanan yang sudah dibuat.
+- Tambah item ke keranjang.
+- Hitung total otomatis.
+- Form konfirmasi:
+  - Nama Pembeli (wajib)
+  - Nomor Kursi / Meja (opsional)
 
-Detail pemesanan tampil lengkap:
+✔️ Pembayaran QR Code (QRIS Dummy)
+Setelah pesanan dibuat:
+- App menampilkan QR Code pembayaran.
+- QR berisi link seperti:
+    https://warungtestipay.vercel.app/?order=xxx&name=xxx&amount=xxxx
 
-Nama pelanggan
+Halaman web berisi:
+  - Nama Pembeli
+  - Total Pembayaran
+  - Status: “Pembayaran Berhasil” (dummy)
 
-Menu yang dipesan
+✔️ Laporan / Riwayat Pemesanan
+Menampilkan riwayat semua pesanan:
+- Nama pembeli
+- Total pembayaran
+- Menu yang dibeli
+- Notifikasi: "Tunggu pramusaji memanggil nama kamu"
 
-Total harga
+| Teknologi            | Deskripsi                       |
+| -------------------- | ------------------------------- |
+| **React Native**     | Framework aplikasi mobile       |
+| **Expo**             | Environment & tools RN          |
+| **React Navigation** | Sistem routing & bottom tabs    |
+| **MockAPI.io**       | Database menu berbasis REST API |
+| **QRCode SVG**       | Generate QR Code pembayaran     |
+| **Vercel**           | Hosting halaman pembayaran      |
 
-Nomor meja
-
-Notifikasi: "Tunggu barista memanggil nama kamu"
-
-🛠 Teknologi yang Digunakan
-Teknologi	Fungsi
-React Native	Framework utama aplikasi
-Expo	Build, testing, dan environment RN
-React Navigation	Routing & Bottom Tabs
-MockAPI.io	Database menu (REST API)
-react-native-qrcode-svg	Generate QR Code pembayaran
-Vercel	Hosting halaman pembayaran dummy
-📌 Struktur Fitur Utama
-/screens
-  ├── DashboardScreen.js
-  ├── PesanScreen.js      → ambil menu + kategori + keranjang
-  ├── BayarScreen.js      → kelola pesanan masuk
-  ├── PaymentQrScreen.js  → generate QR Code 
-  └── LaporanScreen.js    → riwayat pemesanan
-
-/api
-  └── menuService.js      → fetch menu dari MockAPI
-
-/context
-  └── CartContext.js      → keranjang & fungsi makeOrder()
-
-⚙️ Cara Menjalankan
-npm install
-npm start
-
-
-Scan QR dengan aplikasi Expo Go untuk menjalankan di HP.
-
-🧩 Tujuan Aplikasi
-
-Aplikasi ini dibuat untuk:
-
-Mempermudah proses pemesanan di warung.
-
-Mengurangi penulisan manual di kertas.
-
-Mempercepat kasir saat mencatat & memproses pesanan.
-
-Memberikan pengalaman modern pada pelanggan (QRIS, digital queue).
-
-Menjadi contoh project React Native dengan sistem kasir sederhana.
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
